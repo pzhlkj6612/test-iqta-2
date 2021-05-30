@@ -68,6 +68,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Python ${{ matrix.python_ver }}, pip ${{ matrix.pip_ver }}
+        run: echo START!
 
       - uses: actions/setup-python@v2
         with:
