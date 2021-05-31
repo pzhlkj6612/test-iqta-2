@@ -95,28 +95,28 @@ jobs:
       - name: VSCMD_ARG_TGT_ARCH does not exist
         run: |
           python -c "import distutils.util
-          print('::debug::distutils.util.get_platform() = ' + distutils.util.get_platform())"
+          print('::warning::distutils.util.get_platform() = ' + distutils.util.get_platform())"
       - name: VSCMD_ARG_TGT_ARCH is empty
         env:
           VSCMD_ARG_TGT_ARCH: ''
         run: |
           python -c "import distutils.util
-          print('::debug::VSCMD_ARG_TGT_ARCH = empty; distutils.util.get_platform() = ' + distutils.util.get_platform())"
+          print('::warning::VSCMD_ARG_TGT_ARCH = empty; distutils.util.get_platform() = ' + distutils.util.get_platform())"
       - name: VSCMD_ARG_TGT_ARCH is "x86"
         env:
           VSCMD_ARG_TGT_ARCH: 'x86'
         run: |
           python -c "import distutils.util
-          print('::debug::VSCMD_ARG_TGT_ARCH = x86; distutils.util.get_platform() = ' + distutils.util.get_platform())"
+          print('::warning::VSCMD_ARG_TGT_ARCH = x86; distutils.util.get_platform() = ' + distutils.util.get_platform())"
       - name: VSCMD_ARG_TGT_ARCH is "x64"
         env:
           VSCMD_ARG_TGT_ARCH: 'x64'
         run: |
           python -c "import distutils.util
-          print('::debug::VSCMD_ARG_TGT_ARCH = x64; distutils.util.get_platform() = ' + distutils.util.get_platform())"
+          print('::warning::VSCMD_ARG_TGT_ARCH = x64; distutils.util.get_platform() = ' + distutils.util.get_platform())"
       - name: VSCMD_ARG_TGT_ARCH is "arm"
         env:
           VSCMD_ARG_TGT_ARCH: 'arm'
         run: |
           python -c "import distutils.util
-          print('::debug::VSCMD_ARG_TGT_ARCH = arm; distutils.util.get_platform() = ' + distutils.util.get_platform())"
+          print('::warning::VSCMD_ARG_TGT_ARCH = arm; distutils.util.get_platform() = ' + distutils.util.get_platform())"
