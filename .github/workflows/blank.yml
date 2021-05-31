@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python_version: # https://github.com/actions/virtual-environments/blob/main/images/win/Windows2019-Readme.md#python
+        python_ver: # https://github.com/actions/virtual-environments/blob/main/images/win/Windows2019-Readme.md#python
           - '3.5'
           - '3.6'
           - '3.7'
@@ -67,6 +67,11 @@ jobs:
           #     https://github.com/pypa/pip/pull/5561
     runs-on: windows-latest
     steps:
+      - run: |
+          python --version
+          python -m pip --version
+          pip -V
+
       - name: Python ${{ matrix.python_ver }}, pip ${{ matrix.pip_ver }}
         run: echo START!
 
@@ -76,12 +81,15 @@ jobs:
 
       - run: |
           python --version
+          python -m pip --version
           pip -V
       - run: |
           pip install --user pip==${{ matrix.pip_ver }}
+          python -m pip --version
           pip -V
       - run: |
           python --version
+          python -m pip --version
           pip -V
 
       - name: VSCMD_ARG_TGT_ARCH does not exist
